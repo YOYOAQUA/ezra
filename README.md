@@ -8,7 +8,7 @@
 
 הכל רץ דרך החיבור הרשמי של אינסטגרם, באמצעות [Zernio](https://zernio.com). הוא חינמי עד 2 חשבונות ו-10,000 הודעות בחודש.
 
-> 🎬 **ההדרכה המלאה והחינמית, על המסך, צעד אחרי צעד:** [yoavyosha.ravpage.co.il/bot](https://yoavyosha.ravpage.co.il/bot)
+> 🎬 **ההדרכה המלאה והחינמית, על המסך, צעד אחרי צעד:** [yoavyosha.ravpage.co.il/ezra-the-bot](https://yoavyosha.ravpage.co.il/ezra-the-bot)
 
 ## מה יש בפנים
 
