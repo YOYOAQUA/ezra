@@ -1,0 +1,5 @@
+.env
+config.json
+*.bak*
+__pycache__/
+.DS_Store
