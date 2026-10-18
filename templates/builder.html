@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>בונה התגובות של עזרא</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#4A414A;color:#F6EAD0;font-family:'Heebo',Arial,sans-serif}.bb-page{max-width:1180px;margin:0 auto;padding:24px 16px 48px}.bb-page h1{font-size:30px;font-weight:900;margin:0 0 6px}.bb-page>p{margin:0 0 18px;color:rgba(246,234,208,.84)}</style>
+<!--BUILDER:CSS-->
+<style id="bb-css">
+.bb{--bb-gold:#F2B84B;--bb-gold2:#E39A35;--bb-cream:#F6EAD0;--bb-body:rgba(246,234,208,.84);--bb-sky:#BFCFDD;--bb-navy:#352D34;--bb-line:rgba(246,234,208,.18);--bb-ok:#7FD1A8;--bb-bad:#FF8A7A;
+  background:var(--bb-navy);border:1.5px solid rgba(242,184,75,.55);border-radius:16px;padding:18px;color:var(--bb-cream);font-family:'Heebo',Arial,sans-serif;text-align:right;direction:rtl}
+.bb *{box-sizing:border-box}
+.bb-head b{display:block;font-size:21px;color:var(--bb-gold)}
+.bb-head span{display:block;font-size:15px;color:var(--bb-body);margin-top:4px;line-height:1.5}
+.bb-presets{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.bb-presets em{font-style:normal;font-size:14px;color:var(--bb-sky);width:100%}
+.bb-presets button{background:rgba(242,184,75,.12);border:1px solid rgba(242,184,75,.5);color:var(--bb-cream);border-radius:99px;padding:7px 14px;font:inherit;font-size:14px;cursor:pointer}
+.bb-mode{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;background:rgba(246,234,208,.06);border-radius:14px;padding:6px}
+.bb-mode button{border:0;border-radius:10px;background:transparent;color:var(--bb-cream);font:inherit;font-weight:800;font-size:16px;padding:10px 8px;cursor:pointer;line-height:1.25}
+.bb-mode button small{display:block;font-weight:500;font-size:13px;color:var(--bb-body)}
+.bb-mode button.on{background:var(--bb-gold);color:#352D34}
+.bb-mode button.on small{color:#4A414A}
+.bb[data-mode=easy] .bb-pro{display:none}
+.bb[data-mode=pro] .bb-easy{display:none}
+.bb-easy{border:1px solid rgba(242,184,75,.45);border-radius:12px;margin-top:10px;background:rgba(246,234,208,.03);padding:16px 14px}
+.bb-easy .bb-grid{padding:0}
+.bb-easy-note{margin:14px 0 0;font-size:14px;color:var(--bb-body);line-height:1.5;background:rgba(242,184,75,.08);border-radius:10px;padding:10px 12px}
+.bb-easy-note a{color:var(--bb-gold);font-weight:800;cursor:pointer;text-decoration:underline;padding:6px 0;display:inline-block}
+.bb-layout{display:grid;grid-template-columns:1fr;gap:16px;margin-top:14px}
+.bb-part{border:1px solid var(--bb-line);border-radius:12px;margin-top:10px;background:rgba(246,234,208,.03)}
+.bb-part[open]{border-color:rgba(242,184,75,.45)}
+.bb-part>summary{list-style:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:13px 14px;cursor:pointer;user-select:none}
+.bb-part>summary::-webkit-details-marker{display:none}
+.bb-part>summary::before{display:none!important}
+.bb-part>summary i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--bb-gold);color:#352D34;font-style:normal;font-weight:900;display:flex;align-items:center;justify-content:center}
+.bb-part>summary b{font-size:17px}
+.bb-part>summary small{flex-basis:100%;order:3;font-size:14px;color:var(--bb-body);padding-right:38px}
+.bb-part>summary::after{content:"▾";margin-right:auto;color:var(--bb-gold)}
+.bb-part[open]>summary::after{transform:rotate(180deg)}
+.bb-grid{display:grid;grid-template-columns:1fr;gap:14px;padding:2px 14px 16px}
+.bb-f{display:block;min-width:0}
+.bb-f>span{display:block;font-size:14px;font-weight:700;color:var(--bb-sky);margin-bottom:6px}
+.bb-f>span em{font-style:normal;font-weight:400;color:var(--bb-body)}
+.bb-f small{display:block;font-size:13px;color:var(--bb-body);margin-top:5px;line-height:1.45}
+.bb input[type=text],.bb input[type=url],.bb textarea{width:100%;min-height:46px;border:1.5px solid var(--bb-line);border-radius:9px;background:rgba(246,234,208,.07);color:var(--bb-cream);font:inherit;font-size:16px;padding:10px 12px;text-align:right}
+.bb textarea{min-height:120px;line-height:1.5;resize:vertical;unicode-bidi:plaintext}
+.bb input[type=url]{direction:ltr;text-align:left}
+.bb input::placeholder,.bb textarea::placeholder{color:rgba(246,234,208,.42)}
+.bb input:focus,.bb textarea:focus{outline:none;border-color:var(--bb-gold)}
+.bb-chips{display:flex;flex-wrap:wrap;gap:8px}
+.bb-chips button{min-height:40px;border:1.5px solid var(--bb-line);border-radius:99px;background:transparent;color:var(--bb-cream);font:inherit;font-size:15px;padding:0 14px;cursor:pointer}
+.bb-chips button.on{background:var(--bb-gold);border-color:var(--bb-gold);color:#352D34;font-weight:800}
+.bb-tog{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-weight:700;font-size:16px}
+.bb-tog input{width:22px;height:22px;accent-color:#E39A35;flex:none;margin:1px 0 0}
+.bb-tog span small{display:block;font-weight:400;font-size:13px;color:var(--bb-body);margin-top:2px}
+.bb-sub{display:none;padding:10px 0 0 0;margin-right:32px;border-right:2px dashed var(--bb-line);padding-right:12px}
+.bb-sub.on{display:grid;gap:10px}
+.bb-cnt{font-size:12px;font-weight:700;color:var(--bb-sky);margin-top:4px}
+.bb-cnt.bad{color:var(--bb-bad)}
+.bb-kws{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.bb-kws span{background:rgba(242,184,75,.14);border:1px solid rgba(242,184,75,.45);border-radius:99px;padding:2px 10px;font-weight:700;font-size:14px}
+.bb-checks{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.bb-checks li{font-size:14px;line-height:1.45;display:grid;grid-template-columns:22px 1fr;gap:6px}
+.bb-checks li.ok{color:var(--bb-body)}
+.bb-checks li.bad{color:var(--bb-bad);font-weight:700}
+.bb-checks li.warn{color:var(--bb-gold)}
+/* ===== תצוגה מקדימה: טלפון ===== */
+.bb-prev{position:relative}
+.bb-tabs{display:flex;gap:6px;margin-bottom:10px}
+.bb-tabs button{flex:1;min-height:38px;border-radius:99px;border:1.5px solid var(--bb-line);background:transparent;color:var(--bb-cream);font:inherit;font-weight:700;font-size:14px;cursor:pointer}
+.bb-tabs button.on{background:var(--bb-cream);color:#352D34;border-color:var(--bb-cream)}
+.bb-phone{width:100%;max-width:340px;margin:0 auto;background:#000;border-radius:34px;padding:10px;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.bb-screen{background:#fff;color:#111;border-radius:26px;overflow:hidden;min-height:470px;display:flex;flex-direction:column;font-family:-apple-system,'Heebo',Arial,sans-serif}
+.bb-bar{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid #eee;font-weight:700;font-size:15px}
+.bb-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#F2B84B,#E39A35);flex:none;display:flex;align-items:center;justify-content:center;font-size:13px;color:#352D34;font-weight:900}
+.bb-av.u{background:#C9D6E3;color:#334}
+.bb-body{flex:1;padding:12px;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.4}
+.bb-com{display:grid;grid-template-columns:30px 1fr;gap:8px}
+.bb-com b{font-weight:700;margin-left:4px}
+.bb-com .t{color:#888;font-size:12px;margin-top:2px}
+.bb-com.r{margin-right:38px}
+.bb-msg{max-width:84%;align-self:flex-start;background:#EFEFEF;border-radius:18px;padding:9px 13px;white-space:pre-wrap;unicode-bidi:plaintext;text-align:start}
+.bb-msg.me{align-self:flex-end;background:#3797F0;color:#fff}
+.bb-msg.gate{border:1.5px dashed #ccc;background:#F7F7F7}
+.bb-btns{align-self:flex-start;width:84%;display:grid;gap:6px;margin-top:-4px}
+.bb-btns span{display:block;background:#fff;border:1px solid #DBDBDB;border-radius:12px;text-align:center;padding:8px;font-weight:700;color:#0095F6;font-size:14px}
+.bb-note{font-size:11px;color:#999;text-align:center}
+.bb-out{margin-top:16px;background:var(--bb-cream);color:#352D34;border-radius:12px;padding:14px}
+.bb-out b{display:block;font-size:17px;margin-bottom:6px}
+.bb-out pre{margin:0;white-space:pre-wrap;unicode-bidi:plaintext;text-align:start;font-family:'Heebo',Arial,sans-serif;font-size:15px;line-height:1.55;max-height:300px;overflow:auto;background:#fff;border-radius:8px;padding:12px;border:1px solid #E6D8BC}
+.bb-go{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;align-items:center}
+.bb-go button{min-height:52px;flex:1 1 240px;border:0;border-radius:999px;background:linear-gradient(135deg,var(--bb-gold),var(--bb-gold2));color:#352D34;font:inherit;font-weight:900;font-size:17px;cursor:pointer}
+.bb-go button.ok{background:#8FD18B}
+.bb-go a{color:#4A414A;font-size:15px;text-decoration:underline;cursor:pointer;padding:12px 10px;display:inline-block}
+@media (min-width:980px){
+  .bb{padding:26px 28px}
+  .bb-layout{grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:28px;align-items:start}
+  .bb-prev{position:sticky;top:70px}
+  .bb-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px}
+  .bb-grid .w{grid-column:1/-1}
+  .bb-part>summary small{flex-basis:auto;order:0;padding-right:0}
+}
+</style>
+<!--/BUILDER:CSS-->
+</head>
+<body>
+<div class="bb-page">
+<h1>בונה התגובות של עזרא</h1>
+<p>ממלאים, רואים בטלפון בדיוק מה המגיב יקבל, ומעתיקים פרומפט אחד ל-Claude.</p>
+<!--BUILDER:HTML-->
+<div class="bb" id="botbuilder" data-mode="easy">
+  <div class="bb-head">
+    <b>✨ בונה התגובות של עזרא</b>
+    <span>עונים על כמה שאלות, ורואים בטלפון את מה שהמגיב יקבל, בדיוק כמו באינסטגרם. בסוף מעתיקים פרומפט אחד ל-Claude, ועזרא נבנה. חינם, והכל נשמר רק אצלכם בדפדפן.</span>
+    <div class="bb-presets"><em>רוצים לראות איך נראה בוט טוב?</em><button type="button" data-bbp="coach">דוגמה: מאמנת עם מדריך</button><button type="button" data-bbp="pod">דוגמה: פודקאסטר</button><button type="button" data-bbp="shop">דוגמה: חנות עם קופון</button></div>
+  </div>
+  <div class="bb-mode"><button type="button" data-mode="easy" class="on">🟢 מצב מתחיל<small>4 שאלות, והשאר עליי</small></button><button type="button" data-mode="pro">⚙️ מצב מתקדם<small>שליטה בכל פרט</small></button></div>
+  <div class="bb-layout">
+    <div class="bb-form">
+      <div class="bb-easy">
+        <div class="bb-grid">
+          <label class="bb-f"><span>1. מה מקבל מי שמגיב?</span><input type="text" data-b="gift" placeholder="למשל: המדריך המלא לנשימה בבוקר"></label>
+          <label class="bb-f"><span>2. הלינק</span><input type="url" data-b="url" placeholder="https://..."></label>
+          <label class="bb-f"><span>3. המילה שמגיבים</span><input type="text" data-b="kw" placeholder="למשל: נשימה"><small>קצרה וייחודית לנושא. לא "לינק" ולא "מדריך"</small></label>
+          <div class="bb-f"><span>4. איפה?</span><div class="bb-chips" data-b="where"><button type="button" data-v="post">ריל או פוסט</button><button type="button" data-v="story">סטורי</button><button type="button" data-v="both">גם וגם</button></div></div>
+        </div>
+        <p class="bb-easy-note">✨ את השאר בחרתי בשבילכם: הודעה קצרה שנותנת קודם, תגובה פומבית מתחלפת, וכפתור "⏰ תזכירו לי אחר כך". רוצים לשנות את הנוסח, להוסיף שער עוקבים או מייל לניוזלטר? <a data-go="pro">עוברים למצב מתקדם</a></p>
+      </div>
+      <div class="bb-pro">
+      <details class="bb-part" open>
+        <summary><i>1</i><b>מה מחלקים</b><small>המתנה, והלינק שלה</small></summary>
+        <div class="bb-grid">
+          <label class="bb-f"><span>מה מקבל מי שמגיב?</span><input type="text" data-b="gift" placeholder="למשל: המדריך המלא לנשימה בבוקר"><small>כמו שתגידו את זה בריל</small></label>
+          <label class="bb-f"><span>הלינק</span><input type="url" data-b="url" placeholder="https://..."><small>לקובץ, לסרטון, לדף הרשמה או לקבוצה</small></label>
+          <div class="bb-f w"><span>לאן הלינק מוביל?</span><div class="bb-chips" data-b="dest"><button type="button" data-v="direct">ישר למתנה</button><button type="button" data-v="signup">לדף הרשמה לניוזלטר שלי</button><button type="button" data-v="group">לקבוצת וואטסאפ</button></div><small id="bb-destTip">דף הרשמה = כל מי שמגיב נכנס לרשימת התפוצה שלכם, ומקבל את המתנה אחרי שהוא משאיר מייל.</small></div>
+          <label class="bb-f"><span>הכיתוב על הכפתור</span><input type="text" data-b="btn" placeholder="למשל: למדריך המלא"><div class="bb-cnt" id="bb-btnCnt"></div></label>
+          <label class="bb-f"><span>שם האינסטגרם שלכם</span><input type="text" data-b="handle" placeholder="למשל: dana.coach" dir="ltr"></label>
+        </div>
+      </details>
+      <details class="bb-part">
+        <summary><i>2</i><b>המילה</b><small>מה מגיבים, ואיפה</small></summary>
+        <div class="bb-grid">
+          <label class="bb-f"><span>המילה שמגיבים</span><input type="text" data-b="kw" placeholder="למשל: נשימה"><small>מילה אחת, קצרה, שקשורה לנושא ולא מופיעה סתם בתגובות</small><div class="bb-kws" id="bb-kws"></div></label>
+          <label class="bb-f"><span>צורות נוספות <em>(לא חובה)</em></span><input type="text" data-b="kw2" placeholder="למשל: breath, נשימות"><small>כתיב אחר או אנגלית, מופרדים בפסיק. בפוסט, "אשמח ל..." ו"... 🙏" נתפסים ממילא</small></label>
+          <div class="bb-f w"><span>איפה?</span><div class="bb-chips" data-b="where"><button type="button" data-v="post">תגובה לריל או לפוסט</button><button type="button" data-v="story">תשובה לסטורי</button><button type="button" data-v="both">גם וגם</button></div></div>
+          <div class="bb-f w"><span>הפוסט כבר עלה?</span><div class="bb-chips" data-b="live"><button type="button" data-v="yes">כן, הוא באוויר</button><button type="button" data-v="no">עוד לא, עולה בקרוב</button></div><small>הבוט נצמד לפוסט אחד בלבד, כדי שמי שמגיב על פוסט ישן לא יקבל הודעה שלא ביקש</small></div>
+        </div>
+      </details>
+      <details class="bb-part">
+        <summary><i>3</i><b>ההודעה</b><small>מה כתוב בפרטי, ומה רואים מתחת לתגובה</small></summary>
+        <div class="bb-grid">
+          <div class="bb-f"><span>הטון</span><div class="bb-chips" data-b="tone"><button type="button" data-v="warm">חם</button><button type="button" data-v="direct">ישיר</button><button type="button" data-v="funny">מצחיק</button><button type="button" data-v="pro">מקצועי</button></div></div>
+          <div class="bb-f"><span>איך פונים?</span><div class="bb-chips" data-b="addr"><button type="button" data-v="pl">אתם</button><button type="button" data-v="m">אתה</button><button type="button" data-v="f">את</button></div></div>
+          <label class="bb-f w"><span>ההודעה בפרטי <em>(נכתבת לבד, ואפשר לשנות)</em></span><textarea data-b="dm" placeholder="ממלאים את חלק 1, וההודעה נכתבת כאן"></textarea><div class="bb-cnt" id="bb-dmCnt"></div><small><a href="#" id="bb-redraft" style="color:var(--bb-gold)">✨ לכתוב מחדש לפי מה שמילאתי</a></small></label>
+          <label class="bb-f w"><span>התגובה הפומבית מתחת לתגובה שלהם <em>(מתחלפת, שורה לכל נוסח)</em></span><textarea data-b="pub" style="min-height:96px"></textarea><small>4 נוסחים מתחלפים, כדי שלא ייראה כמו בוט. ככה גם מי שגולל רואה שזה עובד, ומגיב בעצמו</small></label>
+        </div>
+      </details>
+      <details class="bb-part">
+        <summary><i>4</i><b>תוספות</b><small>שער עוקבים, תזכורת, ניוזלטר</small></summary>
+        <div class="bb-grid">
+          <div class="bb-f w">
+            <label class="bb-tog"><input type="checkbox" data-b="gate"><span>🔒 רק לעוקבים<small>מי שלא עוקב מקבל קודם בקשה לעקוב, ואז את הלינק. מביא עוקבים, אבל פחות אנשים מגיעים ללינק</small></span></label>
+          </div>
+          <div class="bb-f w">
+            <label class="bb-tog"><input type="checkbox" data-b="remind"><span>⏰ כפתור "תזכירו לי אחר כך"<small>מי שאין לו זמן עכשיו לוחץ, ומקבל את הלינק שוב אחרי כמה שעות</small></span></label>
+            <div class="bb-sub" id="bb-remindSub"><div class="bb-chips" data-b="hours"><button type="button" data-v="2">בעוד שעתיים</button><button type="button" data-v="4">בעוד 4 שעות</button><button type="button" data-v="8">בעוד 8 שעות</button></div></div>
+          </div>
+          <div class="bb-f w">
+            <label class="bb-tog"><input type="checkbox" data-b="email"><span>📩 כפתור "שלחו לי גם למייל"<small>הם כותבים את המייל בתוך ההודעה, והוא נכנס לניוזלטר שלכם (או לקובץ, אם אין חיבור)</small></span></label>
+            <div class="bb-sub" id="bb-emailSub"><label class="bb-f"><span>לאיזה ניוזלטר? <em>(לא חובה)</em></span><input type="text" data-b="nl" placeholder="למשל: רב מסר, מיילצ'ימפ, או לא יודע"></label></div>
+          </div>
+        </div>
+      </details>
+      </div>
+      <ul class="bb-checks" id="bb-checks"></ul>
+    </div>
+    <div class="bb-prev">
+      <div class="bb-tabs"><button type="button" data-t="c" class="on">💬 מתחת לפוסט</button><button type="button" data-t="d">✉️ בפרטי</button></div>
+      <div class="bb-phone"><div class="bb-screen" id="bb-screen"></div></div>
+    </div>
+  </div>
+  <div class="bb-out">
+    <b>📋 הפרומפט לבוט שלכם</b>
+    <pre id="bb-prompt"></pre>
+    <div class="bb-go"><button type="button" id="bb-copy">העתקת הפרומפט</button><a id="bb-clear">ניקוי הכל</a></div>
+  </div>
+</div>
+<!--/BUILDER:HTML-->
+</div>
+<!--BUILDER:JS-->
+<script id="bb-js">
+(function(){
+  var R=document.getElementById('botbuilder');if(!R)return;
+  var KEY='ezra_builder',d={};
+  try{d=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(x){d={};}
+  var $=function(id){return document.getElementById(id);};
+  var COMMON=['לינק','מדריך','תודה','וואו','מהמם','מושלם','אמן','כן','לא','אני','רוצה','מעולה','יפה','חזק','אש','פרטים','מחיר','link','info','yes','wow','love'];
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function store(){try{localStorage.setItem(KEY,JSON.stringify(d));}catch(x){}}
+  /* במצב מתחיל: בלי שער ובלי מייל, תזכורת דולקת, טון ישיר. המתקדם מראה ומשנה הכל */
+  function E(k){if(d.mode!=='pro'){if(k==='gate'||k==='email')return false;if(k==='remind')return d.remind!==false;}return d[k];}
+  function A(pl,m,f){return d.addr==='m'?m:d.addr==='f'?f:pl;}
+
+  /* ----- טיוטות שנכתבות לבד ----- */
+  function draftDM(){
+    var gift=(d.gift||'').trim()||'מה שהבטחתי';
+    var open={warm:'איזה כיף שהגבת 💛\nהנה זה 👇',direct:'הנה זה 👇',funny:'סיסמה נכונה 😎\nהנה זה 👇',pro:'בשמחה, הנה הקישור 👇'}[d.tone||'direct'];
+    var L=[open,gift+', בדיוק כמו שהבטחתי.'];
+    if(d.dest==='signup')L.push(A('שם ומייל, ומיד מקבלים את זה.','שם ומייל, ומיד אתה מקבל את זה.','שם ומייל, ומיד את מקבלת את זה.'));
+    if(E('remind'))L.push(A('אין זמן עכשיו? לחצו על ⏰ ואזכיר לכם בעוד ','אין זמן עכשיו? תלחץ על ⏰ ואזכיר לך בעוד ','אין זמן עכשיו? תלחצי על ⏰ ואזכיר לך בעוד ')+hoursTxt()+'.');
+    if(E('email'))L.push(A('רוצים את זה גם במייל? לחצו על 📩','רוצה את זה גם במייל? תלחץ על 📩','רוצה את זה גם במייל? תלחצי על 📩'));
+    L.push(A('נתקעים או שיש שאלה? כותבים לי כאן, אני עונה ❤️','נתקעת או שיש לך שאלה? תכתוב לי כאן, אני עונה ❤️','נתקעת או שיש לך שאלה? תכתבי לי כאן, אני עונה ❤️'));
+    return L.join('\n');
+  }
+  function draftPub(){return ['שלחתי לך בפרטי 💛','נשלח! מחכה לך בהודעות ✨','אצלך בהודעות 🙌','שלחתי. לא רואים? מציצים ב"בקשות" 📩'].join('\n');}
+  function hoursTxt(){var h=d.hours||'4';return h==='2'?'שעתיים':h+' שעות';}
+  function btnDefault(){var g=(d.gift||'').trim();if(!g)return '';var w=g.split(/\s+/).slice(0,2).join(' ');w=w.replace(/^ה/,'');return ('ל'+(g.charAt(0)==='ה'?'':'')+w).slice(0,20);}
+  /* בפוסט: חיפוש בתוך התגובה (תופס גם "אשמח ל..." ואימוג'י). בסטורי: התגובה כולה, ולכן מוסיפים את הצורות */
+  function kwList(){
+    var k=(d.kw||'').trim().replace(/^["'״]+|["'״]+$/g,''),out=[];if(!k)return out;
+    out.push(k);
+    if(d.where!=='post'&&/^[֐-׿]/.test(k)){if(k.charAt(0)!=='ה')out.push('ה'+k);out.push('ל'+(k.charAt(0)==='ה'?k.slice(1):k));}
+    (d.kw2||'').split(/[,،\n]/).forEach(function(x){x=x.trim();if(x&&out.indexOf(x)<0)out.push(x);});
+    return out;
+  }
+  function slug(){var k=kwList()[0]||'',t=new Date();return 'bot-'+(/^[a-z0-9-]+$/i.test(k)?k.toLowerCase()+'-':'')+t.getDate()+'-'+(t.getMonth()+1);}
+
+  /* ----- בדיקות ----- */
+  function checks(){
+    var C=[],k=(d.kw||'').trim(),btn=(d.btn||btnDefault()),u=(d.url||'').trim();
+    if(!k)C.push(['bad','עוד אין מילה']);
+    else if(COMMON.indexOf(k.toLowerCase())>-1)C.push(['bad','"'+k+'" היא מילה שאנשים כותבים סתם. מי שלא ביקש יקבל הודעה, וזה מה שמביא דיווחי ספאם. בחרו מילה ייחודית לנושא']);
+    else if(k.length<=2)C.push(['bad','מילה של 2 אותיות מסתתרת בתוך יותר מדי מילים. בחרו מילה ארוכה יותר']);
+    else C.push(['ok',d.where==='story'?'בסטורי: נתפס כשהתשובה היא המילה (או ה'+k+' / ל'+k+')':'המילה נתפסת גם בתוך משפט ("אשמח ל'+k+'"), ורק על הפוסט הזה. בטוח']);
+    if(!u)C.push(['bad','עוד אין לינק']);else if(!/^https:\/\//.test(u))C.push(['bad','הלינק צריך להתחיל ב-https://']);else C.push(['ok','יש לינק מאובטח']);
+    if(btn.length>20)C.push(['bad','הכפתור ארוך מדי ('+btn.length+'/20). אימוג׳י נספר כ-2']);else if(btn)C.push(['ok','הכפתור באורך תקין ('+btn.length+'/20)']);
+    var n=1+(E('remind')?1:0)+(E('email')?1:0);if(n>3)C.push(['bad','יותר מ-3 כפתורים']);
+    var dm=d.dm||draftDM(),lim=640;if(dm.length>lim)C.push(['bad','ההודעה ארוכה מדי ('+dm.length+'/'+lim+'). כשיש כפתורים, אינסטגרם מגביל ל-640 תווים']);
+    if(/להוכיח|לא בוט|תוכיחו/.test(dm))C.push(['warn','ההודעה הראשונה צריכה לתת, לא לבקש. בלי "תוכיחו שאתם לא בוט"']);
+    if(E('gate'))C.push(['ok','שער עוקבים: הבקשה לעקוב נותנת רשות לרדת מהמעקב. זה מה שהופך אותה להצעה, ולא לדרישה']);
+    if(!/כותבים לי|תכתוב לי|תכתבי לי|שאלה/.test(dm))C.push(['warn','כדאי לסיים בהזמנה לשיחה ("שאלה? כתבו לי כאן"). תשובות בפרטי הן הסימן הכי חזק לאינסטגרם שזה קשר אמיתי']);
+    if(d.where==='story'||d.where==='both')C.push(['ok','בסטורי: אומרים במפורש "שלחו לי בתשובה לסטורי", ובודקים שאין חוק סטורי אחר עם מילה דומה']);
+    return C;
+  }
+
+  /* ----- הפרומפט ----- */
+  function prompt(){
+    var kws=kwList(),btn=d.btn||btnDefault(),where={post:'תגובה לריל או לפוסט',story:'תשובה לסטורי',both:'גם תגובה לריל וגם תשובה לסטורי (שני חוקים)'}[d.where||'post'];
+    var P=['בוא נבנה בוט תגובות חדש עם עזרא. הנה כל הפרטים:',''];
+    P.push('- שם הקמפיין: '+slug());
+    P.push('- איפה: '+where+(d.where!=='story'?(d.live==='no'?'. הפוסט עוד לא עלה: תכין הכל, ואחרי שאני מפרסם תראה לי את הפוסטים האחרונים ואני אבחר.':'. הפוסט כבר באוויר: תראה לי את הפוסטים האחרונים, ואני אבחר.'):''));
+    P.push('- המילה: '+(kws.length?kws.map(function(x){return '"'+x+'"';}).join(', '):'[המילה]')+(d.where==='story'?' (התאמה: התשובה כולה, exact)':d.where==='both'?' (בפוסט: בתוך התגובה, contains. בסטורי: התשובה כולה, exact, עם הצורות ה- ו-ל-)':' (התאמה: בתוך התגובה, contains, על הפוסט הזה בלבד)'));
+    P.push('- מה מקבלים: '+(d.gift||'[מה שולחים]'));
+    P.push('- הלינק: '+(d.url||'[הלינק]')+(d.dest==='signup'?' (זה דף הרשמה לניוזלטר שלי)':d.dest==='group'?' (קבוצת וואטסאפ)':''));
+    P.push('- כפתור הלינק: "'+(btn||'[כיתוב]')+'"');
+    P.push('','- ההודעה בפרטי, מילה במילה:','"""',(d.dm||draftDM()),'"""');
+    if(d.where!=='story')P.push('','- התגובה הפומבית, מתחלפת:',(d.pub||draftPub()).split('\n').filter(Boolean).map(function(x){return '  • '+x;}).join('\n'));
+    P.push('');
+    P.push('- שער עוקבים: '+(E('gate')?'כן. מי שלא עוקב מקבל קודם בקשה לעקוב, עם רשות לרדת מהמעקב אם זה לא עוזר.':'לא, כולם מקבלים את הלינק מיד.'));
+    if(E('remind'))P.push('- כפתור תזכורת: "⏰ תזכירו לי אחר כך". אחרי '+hoursTxt()+' שולחים שוב את הלינק.');
+    if(E('email'))P.push('- כפתור מייל: "📩 שלחו לי גם למייל". מבקשים את המייל בתוך ההודעה'+(d.nl?', ומכניסים אותו לניוזלטר שלי ב'+d.nl+'.':'. אם אין חיבור לניוזלטר, שומרים לקובץ.'));
+    if(d.handle)P.push('- האינסטגרם שלי: @'+d.handle.replace(/^@/,''));
+    P.push('','תכתוב את זה ל-config.json, תריץ show ואת בדיקת הבטיחות, ותראה לי בדיוק מה המגיב יקבל.','אל תיצור שום דבר אמיתי לפני שאני כותב "מאשר".');
+    return P.join('\n');
+  }
+
+  /* ----- תצוגה מקדימה ----- */
+  var tab='c';
+  function preview(){
+    var h=(d.handle||'השם_שלכם').replace(/^@/,''),k=kwList()[0]||'מילה',btn=d.btn||btnDefault()||'כפתור',pubs=(d.pub||draftPub()).split('\n').filter(Boolean),S='';
+    if(tab==='c'){
+      S+='<div class="bb-bar">תגובות</div><div class="bb-body">';
+      S+='<div class="bb-com"><div class="bb-av u">נ</div><div><b>noa.levi</b>מטורף 🔥<div class="t">לפני 3 דק׳</div></div></div>';
+      S+='<div class="bb-com"><div class="bb-av u">ר</div><div><b>roni_k</b>'+esc(k)+'<div class="t">לפני דקה · השב</div></div></div>';
+      if(d.where!=='story')S+='<div class="bb-com r"><div class="bb-av">'+esc(h.charAt(0).toUpperCase())+'</div><div><b>'+esc(h)+'</b>'+esc(pubs[0]||'')+'<div class="t">עכשיו · אוטומטי</div></div></div>';
+      S+='<div class="bb-com"><div class="bb-av u">ש</div><div><b>shira.m</b>אשמח ל'+esc(k)+'!<div class="t">עכשיו</div></div></div>';
+      S+='<div class="bb-note">'+(d.where==='story'?'בסטורי אין תגובה פומבית. עונים לסטורי, וההודעה מגיעה לפרטי':'גם "אשמח ל'+esc(k)+'" נתפס, כי הצורה עם ל- ברשימה')+'</div></div>';
+    }else{
+      S+='<div class="bb-bar"><div class="bb-av">'+esc(h.charAt(0).toUpperCase())+'</div>'+esc(h)+'</div><div class="bb-body">';
+      S+='<div class="bb-msg me">'+esc(d.where==='story'?k:k)+'</div>';
+      if(E('gate')){S+='<div class="bb-msg gate">'+A('רגע לפני 🙌 את זה אני שולח לעוקבים. עוקבים כבר? לחצו ואני שולח מיד.\n(ואם זה לא יעזור לכם, מורידים עוקב בכיף 🙂)','רגע לפני 🙌 את זה אני שולח לעוקבים. עוקב כבר? תלחץ ואני שולח מיד.\n(ואם זה לא יעזור לך, תוריד עוקב בכיף 🙂)','רגע לפני 🙌 את זה אני שולח לעוקבים. עוקבת כבר? תלחצי ואני שולחת מיד.\n(ואם זה לא יעזור לך, תורידי עוקב בכיף 🙂)')+'</div><div class="bb-btns"><span>'+A('עקבתי, שלחו לי!','עקבתי, שלח לי!','עקבתי, שלחי לי!')+'</span></div>';}
+      S+='<div class="bb-msg">'+esc(d.dm||draftDM())+'</div><div class="bb-btns"><span>'+esc(btn)+'</span>'+(E('remind')?'<span>⏰ תזכירו לי אחר כך</span>':'')+(E('email')?'<span>📩 שלחו לי גם למייל</span>':'')+'</div>';
+      S+='<div class="bb-note">מי שלא עוקב מקבל את זה ב"בקשות הודעות". שם רק כפתורים אמיתיים עובדים, ולכן ההודעה בנויה מכפתורים</div></div>';
+    }
+    $('bb-screen').innerHTML=S;
+  }
+
+  /* ----- חיבור השדות ----- */
+  var inputs=R.querySelectorAll('[data-b]');
+  function paint(){
+    for(var i=0;i<inputs.length;i++){
+      var el=inputs[i],k=el.getAttribute('data-b');
+      if(el.classList.contains('bb-chips')){var bs=el.querySelectorAll('button');for(var j=0;j<bs.length;j++){bs[j].className=d[k]===bs[j].getAttribute('data-v')?'on':'';}}
+      else if(el.type==='checkbox'){el.checked=!!d[k];}
+      else if(document.activeElement!==el){el.value=d[k]||'';}
+    }
+    var ta=R.querySelector('[data-b=dm]');if(!d.dm&&document.activeElement!==ta)ta.value=draftDM();
+    var tp=R.querySelector('[data-b=pub]');if(!d.pub&&document.activeElement!==tp)tp.value=draftPub();
+    var bi=R.querySelector('[data-b=btn]');if(!d.btn)bi.placeholder=btnDefault()||'למשל: למדריך המלא';
+    var b=d.btn||btnDefault();$('bb-btnCnt').textContent=b?b.length+'/20':'';$('bb-btnCnt').className='bb-cnt'+(b.length>20?' bad':'');
+    var dm=d.dm||draftDM();$('bb-dmCnt').textContent=dm.length+'/640';$('bb-dmCnt').className='bb-cnt'+(dm.length>640?' bad':'');
+    $('bb-kws').innerHTML=kwList().map(function(x){return '<span>'+esc(x)+'</span>';}).join('');
+    $('bb-remindSub').className='bb-sub'+(E('remind')?' on':'');$('bb-emailSub').className='bb-sub'+(E('email')?' on':'');
+    $('bb-checks').innerHTML=checks().map(function(c){return '<li class="'+c[0]+'"><span>'+({ok:'✅',bad:'⛔',warn:'⚠️'}[c[0]])+'</span><span>'+esc(c[1])+'</span></li>';}).join('');
+    $('bb-prompt').textContent=prompt();
+    preview();
+  }
+  for(var i=0;i<inputs.length;i++){(function(el){
+    var k=el.getAttribute('data-b');
+    if(el.classList.contains('bb-chips')){el.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var v=b.getAttribute('data-v');d[k]=d[k]===v?'':v;
+      if(k==='tone'||k==='addr'||k==='dest'||k==='hours'){/* הטיוטה נכתבת מחדש רק אם לא נגעו בה */}
+      store();paint();});}
+    else if(el.type==='checkbox'){el.addEventListener('change',function(){d[k]=el.checked;store();paint();});}
+    else{el.addEventListener('input',function(){d[k]=el.value;if((k==='dm'&&el.value===draftDM())||(k==='pub'&&el.value===draftPub()))d[k]='';store();paint();});}
+  })(inputs[i]);}
+  $('bb-redraft').addEventListener('click',function(e){e.preventDefault();d.dm='';d.pub='';store();paint();});
+  var tbs=R.querySelectorAll('.bb-tabs button');
+  for(var t=0;t<tbs.length;t++){tbs[t].addEventListener('click',function(){tab=this.getAttribute('data-t');for(var q=0;q<tbs.length;q++)tbs[q].className=tbs[q]===this?'on':'';preview();});}
+  var PRE={
+    coach:{gift:'המדריך המלא לנשימה בבוקר',url:'https://example.com/breath',dest:'signup',btn:'למדריך הנשימה',handle:'dana.breath',kw:'נשימה',kw2:'נשימות, breath',where:'post',live:'yes',tone:'warm',addr:'pl',gate:false,remind:true,hours:'4',email:false},
+    pod:{gift:'הפרק המלא עם האורח',url:'https://youtu.be/example',dest:'direct',btn:'לפרק המלא',handle:'omer.podcast',kw:'פרק',kw2:'',where:'post',live:'yes',tone:'direct',addr:'m',gate:true,remind:false,email:false},
+    shop:{gift:'קוד הנחה של 15% לכל החנות',url:'https://example.com/shop',dest:'direct',btn:'לקוד ההנחה',handle:'noga.shop',kw:'הנחה',kw2:'קופון',where:'both',live:'no',tone:'funny',addr:'f',gate:false,remind:false,email:true,nl:'רב מסר'}};
+  var pb=R.querySelectorAll('[data-bbp]');
+  for(var p=0;p<pb.length;p++){pb[p].addEventListener('click',function(){
+    if((d.gift||d.kw)&&!confirm('הדוגמה תחליף את מה שמילאתם. להמשיך?'))return;
+    var cur=d.mode||'easy';d=JSON.parse(JSON.stringify(PRE[this.getAttribute('data-bbp')]));d.mode=cur;store();
+    var ps=R.querySelectorAll('.bb-part');for(var q=0;q<ps.length;q++)ps[q].open=true;setMode(d.mode);});}
+  function copyText(txt,done){
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(done,function(){legacy(txt);done();});}else{legacy(txt);done();}
+  }
+  function legacy(txt){var t=document.createElement('textarea');t.value=txt;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');}catch(x){}document.body.removeChild(t);}
+  $('bb-copy').addEventListener('click',function(){var b=this;copyText(prompt(),function(){b.textContent='✓ הועתק! מדביקים ב-Claude';b.className='ok';setTimeout(function(){b.textContent='העתקת הפרומפט';b.className='';},2400);});
+    try{if(window.fbq)fbq('trackCustom','BotBuilderCopy');}catch(x){}});
+  $('bb-clear').addEventListener('click',function(){if(!confirm('למחוק את כל מה שמילאתם?'))return;var cur=d.mode;d={mode:cur,remind:true,tone:'direct',addr:'pl',where:'post',live:'yes',dest:'direct',hours:'4'};try{localStorage.removeItem(KEY);}catch(x){}setMode(cur);});
+  if(d.remind===undefined)d.remind=true;if(!d.mode)d.mode='easy';
+  function setMode(m){d.mode=m;R.setAttribute('data-mode',m);var mb=R.querySelectorAll('.bb-mode button');for(var i=0;i<mb.length;i++)mb[i].className=mb[i].getAttribute('data-mode')===m?'on':'';store();paint();
+    if(m==='pro'){var ps=R.querySelectorAll('.bb-part');if(ps[0])ps[0].open=true;}}
+  var mbs=R.querySelectorAll('.bb-mode button');
+  for(var mi=0;mi<mbs.length;mi++){mbs[mi].addEventListener('click',function(){setMode(this.getAttribute('data-mode'));});}
+  R.querySelector('[data-go=pro]').addEventListener('click',function(e){e.preventDefault();setMode('pro');R.scrollIntoView({behavior:'smooth',block:'start'});});
+  if(!d.tone)d.tone='direct';if(!d.addr)d.addr='pl';if(!d.where)d.where='post';if(!d.live)d.live='yes';if(!d.dest)d.dest='direct';if(!d.hours)d.hours='4';
+  setMode(d.mode);
+})();
+</script>
+<!--/BUILDER:JS-->
+</body>
+</html>

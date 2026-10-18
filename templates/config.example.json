@@ -1,0 +1,53 @@
+{
+  "_readme": "This file is copied to ~/Ezra/config.json. `check` fills profileId and instagram by itself: never type an id by hand. The API key is NOT here, it lives in ~/Ezra/.env.",
+
+  "profileId": "",
+  "instagram": { "accountId": "", "username": "", "profile_url": "" },
+
+  "_newsletter_note": "Optional. Where emails typed inside a DM go. Leave webhook_url empty and `emails` exports them to emails.csv instead. {{email_reply}} is replaced by what the person typed.",
+  "newsletter": {
+    "signup_url": "",
+    "webhook_url": "",
+    "headers": {},
+    "webhook_body": { "email": "{{email_reply}}", "source": "instagram-dm", "campaign": "__CAMPAIGN__" }
+  },
+
+  "campaigns": [
+    {
+      "name": "my-first-bot",
+      "_trigger_note": "comment = a comment under one post. story_reply = a reply to your story.",
+      "trigger": "comment",
+      "post_id": "PUT-THE-POST-ID-HERE",
+
+      "_match_note": "contains = the word anywhere in the comment: catches 'אשמח לנשימה' and 'נשימה 🙏' (29% of real comments are more than the word). Safe because the rule belongs to one post. exact = the whole comment is the word: use it for story replies, and list the forms. word = whole word only: Zernio does not document it for Hebrew, test it first.",
+      "keywords": ["נשימה"],
+      "match": "contains",
+
+      "_dm_note": "Message one GIVES, it does not ask. Say what they get, and end with an open door: 'questions? write to me here'.",
+      "dm": "הנה זה 👇\nPUT-WHAT-THEY-GET-HERE, בדיוק כמו שהבטחתי.\nנתקעים או שיש שאלה? כותבים לי כאן, אני עונה ❤️",
+      "dm_variations": [],
+
+      "_buttons_note": "Up to 3 buttons, including the remind and email buttons below. A title is 20 units at most, an emoji counts 2.",
+      "buttons": [
+        { "type": "url", "title": "למדריך המלא", "url": "https://example.com/PUT-YOUR-LINK" }
+      ],
+      "utm": "ig/dm/my-first-bot",
+
+      "_public_note": "Rotated under the comment so a row of identical replies does not look like a bot. after_dm = only if the DM really went out.",
+      "public_reply": "שלחתי לך בפרטי 💛",
+      "public_reply_variations": ["אצלך בהודעות ✨", "נשלח! תבדקו בפרטי 🙌", "שלחתי, תהנו 🙏"],
+      "public_reply_policy": "after_dm",
+
+      "_gate_note": "null = everyone gets the link at once (converts best). To ask for a follow first, replace null with: {\"message\": \"...\", \"button\": \"עקבתי, שלח לי!\", \"not_following\": \"...\"}. Give permission to leave: 'and if it does not help, unfollow with my blessing'.",
+      "follow_gate": null,
+
+      "_remind_note": "Optional. Adds a button that re-sends the link after N hours (23 at most: Meta's 24h window). The title must not overlap another campaign's button.",
+      "remind": null,
+
+      "_email_note": "Optional. Adds a button that asks for their email inside the DM, and sends it to your newsletter.",
+      "email_capture": null,
+
+      "link_tracking": false
+    }
+  ]
+}

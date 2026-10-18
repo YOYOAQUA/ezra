@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>הפאנל של עזרא</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#4A414A;--card:#564B55;--card2:#625661;--navy:#352D34;--cream:#F6EAD0;--body:rgba(246,234,208,.84);--muted:rgba(246,234,208,.6);
+  --sky:#BFCFDD;--gold:#F2B84B;--gold2:#E39A35;--line:rgba(246,234,208,.14);--ok:#7FD1A8;--bad:#FF8A7A;--warn:#F2B84B}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--cream);font-family:'Heebo',Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px 40px}
+.num{font-family:'Barlow Condensed','Heebo',sans-serif;font-weight:700;direction:ltr;unicode-bidi:isolate}
+header{background:var(--navy);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:16px}
+header h1{margin:0;font-size:22px;font-weight:900}
+header h1 em{font-style:normal;color:var(--gold)}
+.acct{color:var(--body);font-weight:700}
+.stamp{margin-inline-start:auto;color:var(--muted);font-size:14px}
+.rec{background:#B3261E;color:#fff;border-radius:99px;padding:3px 12px;font-size:13px;font-weight:800}
+h2{font-size:20px;font-weight:900;margin:30px 0 12px}
+h2 small{font-weight:500;color:var(--muted);font-size:14px;margin-inline-start:8px}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.kpi{background:var(--card);border-radius:12px;padding:14px 16px}
+.kpi b{display:block;font-size:40px;line-height:1;color:var(--cream)}
+.kpi.hero b{color:var(--gold)}
+.kpi span{display:block;font-size:14px;color:var(--body);margin-top:6px;line-height:1.35}
+.alerts{margin-top:16px;display:grid;gap:8px}
+.alert{display:flex;gap:10px;align-items:flex-start;background:rgba(255,138,122,.1);border:1px solid rgba(255,138,122,.45);border-radius:10px;padding:10px 14px;font-size:15px}
+.alert.w{background:rgba(242,184,75,.08);border-color:rgba(242,184,75,.4)}
+.alert i{font-style:normal;font-weight:900}
+.soft summary{cursor:pointer;font-size:14px;color:var(--body);padding:4px 2px}
+.soft .alert{margin-top:8px}
+.allgood{background:rgba(127,209,168,.1);border:1px solid rgba(127,209,168,.4);border-radius:10px;padding:10px 14px;font-size:15px}
+.chartbox{background:var(--card);border-radius:12px;padding:16px 16px 10px;position:relative}
+.chartbox svg{display:block;width:100%;height:180px;overflow:visible}
+.tip{position:absolute;pointer-events:none;background:var(--navy);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .12s;transform:translate(50%,-110%)}
+.tip b{color:var(--gold)}
+.camps{display:grid;grid-template-columns:1fr;gap:12px}
+.camp{background:var(--card);border-radius:12px;padding:16px;border:1px solid transparent}
+.camp.off{opacity:.6}
+.c-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.c-top b{font-size:18px}
+.pill{font-size:12px;font-weight:800;border-radius:99px;padding:2px 10px;border:1px solid var(--line);color:var(--body)}
+.pill.on{background:rgba(127,209,168,.15);border-color:rgba(127,209,168,.5);color:var(--ok)}
+.pill.off{background:rgba(246,234,208,.08)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{background:rgba(242,184,75,.14);border:1px solid rgba(242,184,75,.45);border-radius:99px;padding:1px 10px;font-weight:700;font-size:14px}
+.meta{font-size:13px;color:var(--muted);margin-top:8px}
+.funnel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:12px}
+.funnel div{background:var(--navy);border-radius:8px;padding:8px 6px;text-align:center}
+.funnel b{display:block;font-size:24px;line-height:1}
+.funnel span{display:block;font-size:12px;color:var(--body);margin-top:4px}
+.funnel .bad b{color:var(--bad)}
+.spark{display:block;width:100%;height:34px;margin-top:10px}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.btns span{font-size:12px;border:1px dashed var(--line);border-radius:6px;padding:1px 8px;color:var(--body)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:right;color:var(--muted);font-weight:700;font-size:13px;padding:8px 6px;border-bottom:1px solid var(--line)}
+td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.feedbox{background:var(--card);border-radius:12px;padding:6px 10px;overflow-x:auto}
+.st{font-weight:800;font-size:12px;border-radius:99px;padding:1px 8px;white-space:nowrap}
+.st.ok{color:var(--ok);background:rgba(127,209,168,.12)}
+.st.bad{color:var(--bad);background:rgba(255,138,122,.12)}
+.st.mid{color:var(--gold);background:rgba(242,184,75,.12)}
+.flows{display:grid;grid-template-columns:1fr;gap:8px}
+.flow{background:var(--card);border-radius:10px;padding:10px 14px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.flow b{font-size:15px}
+.flow span{font-size:13px;color:var(--body)}
+.empty{color:var(--muted);font-size:15px;padding:12px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 16px}
+footer a{color:var(--cream)}
+@media (min-width:760px){
+  .kpis{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .camps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flows{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>הפאנל של <em>עזרא</em></h1>
+  <span class="acct" id="acct"></span>
+  <span class="rec" id="rec" hidden>מצב הקלטה · שמות מוסתרים</span>
+  <span class="stamp" id="stamp"></span>
+</div></header>
+
+<main class="wrap">
+  <div class="kpis" id="kpis"></div>
+  <div class="alerts" id="alerts"></div>
+
+  <h2>תגובות שהפעילו את עזרא <small>14 הימים האחרונים</small></h2>
+  <div class="chartbox" id="chartbox"><svg id="chart" role="img" aria-label="תגובות ביום"></svg><div class="tip" id="tip"></div></div>
+
+  <h2>הקמפיינים <small id="campCount"></small></h2>
+  <div class="camps" id="camps"></div>
+
+  <h2>מה קרה לאחרונה <small>התגובות האחרונות, מכל הקמפיינים</small></h2>
+  <div class="feedbox"><table><thead><tr><th>מתי</th><th>קמפיין</th><th>מי</th><th>מה כתבו</th><th>מה קרה</th></tr></thead><tbody id="feed"></tbody></table></div>
+
+  <h2>הזרימות <small>"תזכירו לי", מייל לניוזלטר, שער עוקבים</small></h2>
+  <div class="flows" id="flows"></div>
+</main>
+<footer>ezra <span id="ver"></span> · הפאנל נבנה מחדש בכל פעם שכותבים ל-Claude "תפתח לי את הפאנל" · נבנה על ידי <a href="https://www.instagram.com/yoav_yosha/" target="_blank" rel="noopener">יואב יושע</a></footer>
+
+<script>
+var D = __DATA__;
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var fmt=function(n){return (n||0).toLocaleString('he-IL');};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function ago(iso){
+    if(!iso)return '';var m=(Date.now()-new Date(iso).getTime())/60000;
+    if(m<60)return 'לפני '+Math.max(1,Math.round(m))+' דק׳';if(m<1440)return 'לפני '+Math.round(m/60)+' שע׳';
+    var d=Math.round(m/1440);return d===1?'אתמול':'לפני '+d+' ימים';
+  }
+  $('acct').textContent=D.account||'';
+  $('rec').hidden=!D.mask;
+  $('stamp').textContent='עודכן '+new Date(D.generated).toLocaleString('he-IL',{dateStyle:'short',timeStyle:'short'});
+  $('ver').textContent=D.version||'';
+
+  var T=D.totals, rate=T.triggered?Math.round(100*T.sent/T.triggered):0;
+  var K=[['hero',T.sent,'הודעות פרטיות שנשלחו לבד'],['',T.triggered,'תגובות שהפעילו את עזרא'],['',T.unique||T.people,'אנשים שונים קיבלו הודעה'],
+         ['',T.read,'הודעות שנקראו'],['',T.failed,'הודעות שנכשלו'],['',T.live,'קמפיינים פעילים מתוך '+T.campaigns]];
+  $('kpis').innerHTML=K.map(function(k){return '<div class="kpi '+k[0]+'"><b class="num">'+fmt(k[1])+'</b><span>'+k[2]+'</span></div>';}).join('');
+
+  /* התראות הבטיחות, בעברית פשוטה */
+  var HE=[[/answers its word on EVERY post/,'עונה על המילה בכל הפוסטים שאי פעם פרסמתם. כדאי להצמיד אותו לפוסט אחד.'],
+          [/catches everyday words/,'תופס מילים יומיומיות בתשובות לכל הסטוריז. כדאי להשהות אותו כשהסטורי ירד.'],
+          [/answers EVERY reply to EVERY story/,'עונה על כל תשובה לכל סטורי. כדאי להשהות.'],
+          [/is short and matched anywhere/,'מילה קצרה שנתפסת גם בתוך מילים אחרות.'],
+          [/link tracking is on/,'מעקב קליקים דלוק: לינק עטוף נראה כמו ספאם בהודעות.'],
+          [/failed DMs/,'יש הרבה הודעות שנכשלו. כדאי לבקש מ-Claude לבדוק את היומן.'],
+          [/differ from the live ones/,'המילים בקובץ שונות מהמילים בחוק החי.']];
+  /* קבוצה אחת לכל קמפיין: קודם מה שמסוכן, ואת ההערות הקטנות מקפלים */
+  var G={},order=[];
+  (D.alerts||[]).forEach(function(l){
+    var bad=l.charAt(0)==='✗',txt=l.replace(/^[✗!]\s*/,''),name=txt.split(':')[0],he='';
+    for(var i=0;i<HE.length;i++){if(HE[i][0].test(txt)){he=HE[i][1];break;}}
+    he=he||txt.slice(name.length+1);
+    if(!G[name]){G[name]={bad:false,msgs:[]};order.push(name);}
+    G[name].bad=G[name].bad||bad;if(G[name].msgs.indexOf(he)<0)G[name].msgs.push(he);
+  });
+  function card(n){return '<div class="alert'+(G[n].bad?'':' w')+'"><i>'+(G[n].bad?'⛔':'⚠️')+'</i><div><b>'+esc(n)+'</b>: '+G[n].msgs.map(esc).join(' ')+'</div></div>';}
+  var hard=order.filter(function(n){return G[n].bad;}),soft=order.filter(function(n){return !G[n].bad;});
+  $('alerts').innerHTML=!order.length?'<div class="allgood">✅ בדיקת הבטיחות עברה: אין קמפיין שעלול לשלוח הודעה למי שלא ביקש.</div>':
+    hard.map(card).join('')+(soft.length?'<details class="soft"><summary>⚠️ עוד '+soft.length+' הערות קטנות</summary>'+soft.map(card).join('')+'</details>':'');
+
+  /* גרף: סדרה אחת, עמודות דקות עם קצה מעוגל מעל הבסיס, וטולטיפ במעבר */
+  (function(){
+    var s=T.series||[],days=D.days||[],svg=$('chart'),W=svg.clientWidth||600,H=180,pb=22,pt=18;
+    var max=Math.max(1,Math.max.apply(null,s)),n=s.length||1,slot=W/n,bw=Math.max(6,Math.min(28,slot*.55));
+    var NS='http://www.w3.org/2000/svg',out='';
+    out+='<line x1="0" x2="'+W+'" y1="'+(H-pb)+'" y2="'+(H-pb)+'" stroke="rgba(246,234,208,.25)" stroke-width="1"/>';
+    for(var i=0;i<n;i++){
+      var v=s[i]||0,h=v?Math.max(4,(H-pb-pt)*v/max):0,x=W-(i+.5)*slot-bw/2,y=H-pb-h,r=Math.min(4,bw/2,h);
+      if(h)out+='<path d="M'+x+','+(H-pb)+'V'+(y+r)+'Q'+x+','+y+' '+(x+r)+','+y+'H'+(x+bw-r)+'Q'+(x+bw)+','+y+' '+(x+bw)+','+(y+r)+'V'+(H-pb)+'Z" fill="#F2B84B"/>';
+      if(v===max&&v)out+='<text x="'+(x+bw/2)+'" y="'+(y-5)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#F6EAD0">'+v+'</text>';
+      if(i%2===0||n<10){var d=new Date(days[i]);out+='<text x="'+(x+bw/2)+'" y="'+(H-5)+'" text-anchor="middle" font-size="11" fill="rgba(246,234,208,.6)">'+d.getDate()+'.'+(d.getMonth()+1)+'</text>';}
+      out+='<rect class="hit" data-i="'+i+'" x="'+(W-(i+1)*slot)+'" y="0" width="'+slot+'" height="'+H+'" fill="transparent"/>';
+    }
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.innerHTML=out;
+    var tip=$('tip'),box=$('chartbox');
+    svg.addEventListener('mousemove',function(e){
+      var t=e.target;if(!t.classList||!t.classList.contains('hit')){tip.style.opacity=0;return;}
+      var i=+t.getAttribute('data-i'),d=new Date(days[i]);
+      tip.innerHTML=d.toLocaleDateString('he-IL',{weekday:'short',day:'numeric',month:'numeric'})+' · <b>'+(s[i]||0)+'</b> תגובות';
+      var r=box.getBoundingClientRect();tip.style.left=(e.clientX-r.left)+'px';tip.style.top=(e.clientY-r.top)+'px';tip.style.opacity=1;
+    });
+    svg.addEventListener('mouseleave',function(){tip.style.opacity=0;});
+  })();
+
+  function spark(series){
+    var n=series.length,max=Math.max(1,Math.max.apply(null,series)),W=280,H=34,w=W/n,o='';
+    for(var i=0;i<n;i++){var v=series[i]||0,h=v?Math.max(3,(H-4)*v/max):0;if(h)o+='<rect x="'+(W-(i+1)*w+1)+'" y="'+(H-h)+'" width="'+Math.max(2,w-2)+'" height="'+h+'" rx="2" fill="#F2B84B"/>';}
+    return '<svg class="spark" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-hidden="true">'+o+'<line x1="0" x2="'+W+'" y1="'+(H-.5)+'" y2="'+(H-.5)+'" stroke="rgba(246,234,208,.2)"/></svg>';
+  }
+  var C=D.campaigns||[];
+  $('campCount').textContent=C.length?C.length+' בסך הכל':'';
+  $('camps').innerHTML=C.length?C.map(function(c){
+    var where=c.trigger==='story_reply'?(c.post?'תשובה לסטורי מסוים':'תשובה לכל סטורי'):(c.post?'תגובה לפוסט אחד':'תגובה בכל הפוסטים ⚠️');
+    var F=[[c.triggered,'הגיבו'],[c.sent,'קיבלו הודעה'],[c.read,'קראו'],[c.failed,'נכשלו','bad']];
+    if(c.gate)F.splice(1,0,[c.gate_passed,'עברו את שער העוקבים']);
+    if(F.length>4)F.pop();
+    return '<article class="camp'+(c.active?'':' off')+'"><div class="c-top"><b>'+esc(c.name)+'</b><span class="pill '+(c.active?'on':'off')+'">'+(c.active?'פעיל':'מושהה')+'</span><span class="pill">'+where+'</span>'+(c.gate?'<span class="pill">שער עוקבים</span>':'')+'</div>'
+      +'<div class="chips">'+(c.keywords.length?c.keywords.map(function(k){return '<span class="chip">'+esc(k)+'</span>';}).join(''):'<span class="chip">כל תשובה</span>')+'</div>'
+      +'<div class="funnel">'+F.map(function(f){return '<div class="'+(f[2]||'')+'"><b class="num">'+fmt(f[0])+'</b><span>'+f[1]+'</span></div>';}).join('')+'</div>'
+      +spark(c.series||[])
+      +(c.buttons&&c.buttons.length?'<div class="btns">'+c.buttons.map(function(b){return '<span>'+esc(b)+'</span>';}).join('')+'</div>':'')
+      +'<div class="meta">'+(c.last?'תגובה אחרונה '+ago(c.last)+' · ':'')+'נוצר '+esc(c.created)+' · התאמה: '+({word:'מילה שלמה',contains:'בתוך התגובה',exact:'התגובה כולה'}[c.match]||esc(c.match))+'</div></article>';
+  }).join(''):'<p class="empty">עוד אין קמפיינים. כתבו ל-Claude: "בוא נבנה את הבוט הראשון שלי".</p>';
+
+  var ST={sent:['נשלח','ok'],delivered:['נמסר','ok'],read:['נקרא','ok'],failed:['נכשל','bad'],error:['נכשל','bad'],
+          skipped:['דולג','mid'],audience_skipped:['לא עוקב','mid'],gated:['בשער','mid'],pending:['ממתין','mid']};
+  var Fd=D.feed||[];
+  $('feed').innerHTML=Fd.length?Fd.map(function(f){
+    var s=ST[f.status]||[esc(f.status||'?'),'mid'];
+    return '<tr><td>'+ago(f.t)+'</td><td>'+esc(f.campaign)+'</td><td>'+esc(f.who)+'</td><td>'+(f.text?esc(f.text):'<span style="color:var(--muted)">מוסתר</span>')+'</td><td><span class="st '+s[1]+'">'+s[0]+'</span>'+(f.err?'<div class="meta">'+esc(f.err)+'</div>':'')+'</td></tr>';
+  }).join(''):'<tr><td colspan="5" class="empty">אין עדיין תגובות.</td></tr>';
+
+  var W=D.flows||[];
+  $('flows').innerHTML=W.length?W.map(function(w){
+    return '<div class="flow"><b>'+esc(w.name)+'</b><span class="pill '+(w.status==='active'?'on':'off')+'">'+(w.status==='active'?'פעילה':'מושהית')+'</span><span>התחילו <b class="num">'+fmt(w.started)+'</b> · הגיעו לסוף <b class="num">'+fmt(w.completed)+'</b></span></div>';
+  }).join('')+(D.emails?'<div class="flow"><b>📩 מיילים שנאספו בהודעות</b><span><b class="num">'+fmt(D.emails)+'</b> בקובץ emails.csv</span></div>':''):'<p class="empty">אין עדיין זרימות. אפשר להוסיף כפתור "⏰ תזכירו לי" או "📩 שלחו לי למייל".</p>';
+})();
+</script>
+</body>
+</html>
