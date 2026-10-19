@@ -302,7 +302,10 @@
     var dm=d.dm||draftDM();$('bb-dmCnt').textContent=dm.length+'/640';$('bb-dmCnt').className='bb-cnt'+(dm.length>640?' bad':'');
     $('bb-kws').innerHTML=kwList().map(function(x){return '<span>'+esc(x)+'</span>';}).join('');
     $('bb-remindSub').className='bb-sub'+(E('remind')?' on':'');$('bb-emailSub').className='bb-sub'+(E('email')?' on':'');
-    $('bb-checks').innerHTML=checks().map(function(c){return '<li class="'+c[0]+'"><span>'+({ok:'✅',bad:'⛔',warn:'⚠️'}[c[0]])+'</span><span>'+esc(c[1])+'</span></li>';}).join('');
+    /* בונים את הרשימה דרך ה-DOM: רב מסר מוחק מהקוד מאפיין HTML שהערך שלו נבנה בשרשור */
+    var ul=$('bb-checks');ul.innerHTML='';
+    checks().forEach(function(c){var li=document.createElement('li');li.className=c[0];
+      li.innerHTML='<span>'+({ok:'✅',bad:'⛔',warn:'⚠️'}[c[0]])+'</span><span>'+esc(c[1])+'</span>';ul.appendChild(li);});
     $('bb-prompt').textContent=prompt();
     preview();
   }
